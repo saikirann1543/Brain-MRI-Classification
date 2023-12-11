@@ -22,7 +22,7 @@ img_size = 224
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 # Load the TFLite model
-interpreter = tf.lite.Interpreter(model_path='/opt/render/project/src/mobilenet_v2.tflite')
+interpreter = tf.lite.Interpreter(model_path='opt/render/project/src/mobilenet_v2.tflite')
 interpreter.allocate_tensors()
 
 # Load the TFLite model

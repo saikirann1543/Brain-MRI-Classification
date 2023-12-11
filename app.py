@@ -22,7 +22,7 @@ img_size = 224
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 # Load the TFLite model
-interpreter = tf.lite.Interpreter(model_path='mobilenet_v2.tflite')
+interpreter = tf.lite.Interpreter(model_path='/opt/render/project/src/mobilenet_v2.tflite')
 interpreter.allocate_tensors()
 
 # Load the TFLite model
@@ -108,7 +108,7 @@ def index():
         # Save image to the static folder
         filename = secure_filename(file.filename)
         filename = remove_special_characters(filename)
-        file_path = os.path.join('static', filename)
+        file_path = os.path.join('/opt/render/project/src/static', filename)
         file.save(file_path)
 
         # Read the image and make predictions

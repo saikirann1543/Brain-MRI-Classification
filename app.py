@@ -22,11 +22,11 @@ img_size = 224
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 # Load the TFLite model
-interpreter = tf.lite.Interpreter(model_path='/src/mobilenet_v2.tflite')
+interpreter = tf.lite.Interpreter(model_path='~/project/src/mobilenet_v2.tflite')
 interpreter.allocate_tensors()
 
 # Load the TFLite model
-mri_interpreter = tf.lite.Interpreter(model_path=r'mobilenet_mri.tflite')
+mri_interpreter = tf.lite.Interpreter(model_path=r'~/project/src/mobilenet_mri.tflite')
 mri_interpreter.allocate_tensors()
 
 # Function to predict and return the class label
@@ -108,7 +108,7 @@ def index():
         # Save image to the static folder
         filename = secure_filename(file.filename)
         filename = remove_special_characters(filename)
-        file_path = os.path.join('/opt/render/project/src/static', filename)
+        file_path = os.path.join('~/project/src/static', filename)
         file.save(file_path)
 
         # Read the image and make predictions

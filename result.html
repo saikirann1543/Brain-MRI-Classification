@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <a href="#"><title>Brain Tumor Classification Result</title> </a>
+        <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+        background-image: url("static/undraw_medicine_b1ol (2).png");
+        background-position: absolute;
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      #result {
+        font-size: 18px;
+        margin-top: 40px;
+      }
+      img {
+        max-width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="{{ url_for('index') }}"><h1>Brain Tumor Classification Result</h1></a>
+    <div id="result">
+      <b><p>Classification Result: {{ result }}</p></b>
+      <b><p>Certainty : {{ accuracy }}</p></b>
+      {% if result == 'no_tumor' %}
+      <b><p>Tumor Probability : {{ tumor_probability }}</p></b>
+    {% endif %}
+    <img src="{{url_for('static',filename=image)}}" />
+       <!--<p>Training and Testing Data Split</p>-->
+    <ul>
+              <!--img src="{{url_for('static',filename='train.png')}}" />-->
+      <!--img src="{{url_for('static',filename='test.png')}}" /> </ul>-->
+    </div>
+  </body>
+</html>
